@@ -2,9 +2,19 @@ package com.app.forceup.model;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="EMPLOYEE_DETAILS")
 public class EmployeeDetails {
 
-	Long empId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	Integer empId;
 	Long empGroupId;
 	String empName;
 	String empMailId;
@@ -23,10 +33,13 @@ public class EmployeeDetails {
 	Long empIssueReports;
 	String activeFlag;
 	Date empJoiningDate;
-	public Long getEmpId() {
+	
+	
+	
+	public Integer getEmpId() {
 		return empId;
 	}
-	public void setEmpId(Long empId) {
+	public void setEmpId(Integer empId) {
 		this.empId = empId;
 	}
 	public Long getEmpGroupId() {

@@ -1,9 +1,20 @@
 package com.app.forceup.model;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="SALE_DETAILS")
 public class SaleDetails {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	Integer leadReferenceId;
 	Long empId;
 	String leadName;
 	String leadMailId;
@@ -13,12 +24,44 @@ public class SaleDetails {
 	String leadState;
 	Long leadPostalCode;
 	Long leadPhoneNumber;
-	char leadStatus;
-	XMLGregorianCalendar leadClosureDate;
-	XMLGregorianCalendar leadStartTime;
-	XMLGregorianCalendar leadEndTime;
-	XMLGregorianCalendar lastUpdatedTimestamp;
+	String leadStatus;
+	Date leadClosureDate;
+	Date leadStartTime;
+	Date leadEndTime;
+	Date lastUpdatedTimestamp;
 	Long dealAmount;
+	
+
+	public SaleDetails(Integer leadReferenceId, Long empId, String leadName, String leadMailId, String empCompanyName,
+			String leadAddress, String leadCity, String leadState, Long leadPostalCode, Long leadPhoneNumber,
+			String leadStatus, Date leadClosureDate, Date leadStartTime,
+			Date leadEndTime, Date lastUpdatedTimestamp, Long dealAmount) {
+		this.leadReferenceId = leadReferenceId;
+		this.empId = empId;
+		this.leadName = leadName;
+		this.leadMailId = leadMailId;
+		this.empCompanyName = empCompanyName;
+		this.leadAddress = leadAddress;
+		this.leadCity = leadCity;
+		this.leadState = leadState;
+		this.leadPostalCode = leadPostalCode;
+		this.leadPhoneNumber = leadPhoneNumber;
+		this.leadStatus = leadStatus;
+		this.leadClosureDate = leadClosureDate;
+		this.leadStartTime = leadStartTime;
+		this.leadEndTime = leadEndTime;
+		this.lastUpdatedTimestamp = lastUpdatedTimestamp;
+		this.dealAmount = dealAmount;
+	}
+
+	public Integer getLeadReferenceId() {
+		return leadReferenceId;
+	}
+
+	public void setLeadReferenceId(Integer leadReferenceId) {
+		this.leadReferenceId = leadReferenceId;
+	}
+
 	public Long getEmpId() {
 		return empId;
 	}
@@ -73,34 +116,34 @@ public class SaleDetails {
 	public void setLeadPhoneNumber(Long leadPhoneNumber) {
 		this.leadPhoneNumber = leadPhoneNumber;
 	}
-	public char getLeadStatus() {
+	public String getLeadStatus() {
 		return leadStatus;
 	}
-	public void setLeadStatus(char leadStatus) {
+	public void setLeadStatus(String leadStatus) {
 		this.leadStatus = leadStatus;
 	}
-	public XMLGregorianCalendar getLeadClosureDate() {
+	public Date getLeadClosureDate() {
 		return leadClosureDate;
 	}
-	public void setLeadClosureDate(XMLGregorianCalendar leadClosureDate) {
+	public void setLeadClosureDate(Date leadClosureDate) {
 		this.leadClosureDate = leadClosureDate;
 	}
-	public XMLGregorianCalendar getLeadStartTime() {
+	public Date getLeadStartTime() {
 		return leadStartTime;
 	}
-	public void setLeadStartTime(XMLGregorianCalendar leadStartTime) {
+	public void setLeadStartTime(Date leadStartTime) {
 		this.leadStartTime = leadStartTime;
 	}
-	public XMLGregorianCalendar getLeadEndTime() {
+	public Date getLeadEndTime() {
 		return leadEndTime;
 	}
-	public void setLeadEndTime(XMLGregorianCalendar leadEndTime) {
+	public void setLeadEndTime(Date leadEndTime) {
 		this.leadEndTime = leadEndTime;
 	}
-	public XMLGregorianCalendar getLastUpdatedTimestamp() {
+	public Date getLastUpdatedTimestamp() {
 		return lastUpdatedTimestamp;
 	}
-	public void setLastUpdatedTimestamp(XMLGregorianCalendar lastUpdatedTimestamp) {
+	public void setLastUpdatedTimestamp(Date lastUpdatedTimestamp) {
 		this.lastUpdatedTimestamp = lastUpdatedTimestamp;
 	}
 	public Long getDealAmount() {

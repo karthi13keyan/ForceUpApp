@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @EnableAutoConfiguration
 @EnableJpaRepositories("com.app.forceup.repository")
-@ComponentScan({"com.app.forceup.controller"})
+@ComponentScan({"com.app.forceup.controller","com.app.forceup.service","com.app.forceup.service.BO"})
 @EntityScan("com.app.forceup.model")  
 public class ForceUpAppApplication {
 
